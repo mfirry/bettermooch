@@ -53,7 +53,6 @@ const authors = [
 ];
 
 const publishers = [
-  "mondadori",
   "einaudi",
   "adelphi",
   "nottetempo",

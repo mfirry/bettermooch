@@ -3,17 +3,17 @@ import axios from "axios";
 import send from "./mailer.js";
 import { authors, publishers } from "./config.js";
 
-const filter = (x) => {
-  const a = x.Author.split(" ")
+const filter = (book) => {
+  const a = book.Author.split(" ")
     .map((x) => x.trim())
     .filter((x) => x.length > 1)
     .map((x) => x.toLowerCase());
-  const p = x.Publisher.split(" ")
+  const p = book.Publisher.split(" ")
     .map((x) => x.trim())
     .filter((x) => x.length > 1)
     .map((x) => x.toLowerCase());
 
-  console.log(a + " " + p);
+  console.log(a + " ~ " + book?.Title + ` (${p})\t\t\t\t${book.id}`);
 
   return (
     a.map((x) => authors.includes(x)).filter((x) => x).length > 0 ||
