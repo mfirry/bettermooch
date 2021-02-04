@@ -1,0 +1,16 @@
+{
+  "name": "bookmooch",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "form-data": "^3.0.0",
+    "mailgun.js": "^3.2.0"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
+  }
+}
