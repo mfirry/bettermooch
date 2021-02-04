@@ -9,14 +9,33 @@ const mg = mailgun.client({
   key: process.env.MAILGUN_API_KEY || "key-yourkeyhere",
 });
 
-const send = (book) => {
+const text = (books) => {
+  return books
+    .map(
+      (book) =>
+        `${book.Title} - http://www.bookmooch.com/detail/${book.id} - ${book?.Publisher}`
+    )
+    .join("\n");
+};
+
+const html = (books) => {
+  const text = books
+    .map(
+      (book) =>
+        `<p><a href="http://www.bookmooch.com/detail/${book.id}">${book.Title} -  ${book?.Publisher}</a></p>`
+    )
+    .join("\n");
+  return text;
+};
+
+const send = (books) => {
   mg.messages
     .create(sandbox, {
-      from: "BettermoochJS <nobody@example.com>",
-      to: ["mfirry@gmail.com"],
+      from: "BettermoochJS <Bettermooch@BettermoochJS.com>",
+      to: ["mfirry@gmail.com", "afirry@gmail.com"],
       subject: "Bettermooch just found something!",
-      text: `${book.Title} - http://www.bookmooch.com/detail/${book.id} - ${book?.Publisher}`,
-      html: `<a href="http://www.bookmooch.com/detail/${book.id}">${book.Title} -  ${book?.Publisher}</a>`,
+      text: text(books),
+      html: html(books),
     })
     .then((msg) => console.log(msg)) // logs response data
     .catch((err) => console.log(err)); // logs any error

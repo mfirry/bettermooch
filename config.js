@@ -53,6 +53,7 @@ const authors = [
 ];
 
 const publishers = [
+  "mondadori",
   "einaudi",
   "adelphi",
   "nottetempo",
@@ -67,7 +68,7 @@ const publishers = [
   "minimum",
   "zandonai",
   "beat",
-  "feltrinelli"
+  "feltrinelli",
 ];
 
 export { authors, publishers };
