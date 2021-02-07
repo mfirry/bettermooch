@@ -8,7 +8,9 @@ const filter = (book) => {
     .map((x) => x.trim())
     .filter((x) => x.length > 1)
     .map((x) => x.toLowerCase());
-  const p = book.Publisher.split(" ")
+
+  const p = (book?.Publisher ?? " ")
+    .split(" ")
     .map((x) => x.trim())
     .filter((x) => x.length > 1)
     .map((x) => x.toLowerCase());
@@ -29,8 +31,8 @@ axios
     const books = response.data
       .filter((x) => x.Author != null)
       .filter((x) => x.Author != "")
-      .filter((x) => x.Publisher != null)
-      .filter((x) => x.Publisher != "")
+      // .filter((x) => x.Publisher != null)
+      // .filter((x) => x.Publisher != "")
       .filter((x) => x.added_where == "IT")
       .filter((x) => filter(x));
     if (books.length > 0) {

@@ -22,7 +22,9 @@ const html = (books) => {
   const text = books
     .map(
       (book) =>
-        `<p><a href="http://www.bookmooch.com/detail/${book.id}">${book?.Author}: ${book.Title} (${book?.Publisher})</a></p>`
+        `<p><a href="http://www.bookmooch.com/detail/${book.id}">${
+          book?.Author ?? "no-author"
+        }: ${book.Title} (${book?.Publisher ?? "no-publisher"})</a></p>`
     )
     .join("\n");
   return text;
