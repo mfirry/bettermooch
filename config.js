@@ -26,6 +26,7 @@ const authors = [
   "giaime",
   "goemans",
   "goytisolo",
+  "harari",
   "irmgard",
   "karlsson",
   "krasznahorkai",
