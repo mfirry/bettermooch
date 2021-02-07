@@ -58,6 +58,8 @@ const publishers = [
   "adelphi",
   "nottetempo",
   "guanda",
+  "isbn",
+  "iperborea",
   "voland",
   "sellerio",
   "ponte",
