@@ -33,9 +33,9 @@ axios
       .filter((x) => x.Publisher != "")
       .filter((x) => x.added_where == "IT")
       .filter((x) => filter(x));
-    if(books.length > 0) {
+    if (books.length > 0) {
       send(books);
     } else {
-      console.log("empty list of books")
+      console.log("empty list of books");
     }
   });
