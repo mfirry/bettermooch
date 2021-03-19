@@ -31,8 +31,6 @@ axios
     const books = response.data
       .filter((x) => x.Author != null)
       .filter((x) => x.Author != "")
-      // .filter((x) => x.Publisher != null)
-      // .filter((x) => x.Publisher != "")
       .filter((x) => x.added_where == "IT")
       .filter((x) => filter(x));
     if (books.length > 0) {

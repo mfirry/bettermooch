@@ -71,6 +71,7 @@ const publishers = [
   "zandonai",
   "beat",
   "feltrinelli",
+  "topipittori"
 ];
 
 export { authors, publishers };
