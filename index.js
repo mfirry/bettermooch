@@ -25,7 +25,7 @@ const filter = (book) => {
 
 axios
   .get(
-    "http://api.bookmooch.com/api/recent?o=json&inc=id+added_when+added_by+added_where+Author+Title+Publisher+Year"
+    "http://api.bookmooch.com/api/recent?o=json&inc=id+added_when+added_by+added_where+Author+Title+Publisher+Year",
   )
   .then((response) => {
     const books = response.data

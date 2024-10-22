@@ -13,7 +13,7 @@ const text = (books) => {
   return books
     .map(
       (book) =>
-        `${book?.Author} - ${book.Title} (${book?.Publisher}): http://www.bookmooch.com/detail/${book.id}`
+        `${book?.Author} - ${book.Title} (${book?.Publisher}): http://www.bookmooch.com/detail/${book.id}`,
     )
     .join("\n");
 };
@@ -24,7 +24,7 @@ const html = (books) => {
       (book) =>
         `<p><a href="http://www.bookmooch.com/detail/${book.id}">${
           book?.Author ?? "no-author"
-        }: ${book.Title} (${book?.Publisher ?? "no-publisher"})</a></p>`
+        }: ${book.Title} (${book?.Publisher ?? "no-publisher"})</a></p>`,
     )
     .join("\n");
   return text;
@@ -34,7 +34,7 @@ const send = (books) => {
   mg.messages
     .create(sandbox, {
       from: "BettermoochJS <Bettermooch@BettermoochJS.com>",
-      to: ["mfirry@gmail.com", "afirry@gmail.com"],
+      to: ["mfirry@gmail.com"],
       subject: "Bettermooch just found something!",
       text: text(books),
       html: html(books),
