@@ -27,7 +27,7 @@ export const ifilter = (book) => {
   );
 };
 
-function compareBook(a, b) {
+export function compareBook(a, b) {
   const nameA = a.Author.toUpperCase(); // ignore upper and lowercase
   const nameB = b.Author.toUpperCase(); // ignore upper and lowercase
   if (!nameA || !nameB) {
