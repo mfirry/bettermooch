@@ -80,3 +80,5 @@ function run() {
       }
     });
 }
+
+run();

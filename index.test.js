@@ -1,7 +1,6 @@
 import { jest } from "@jest/globals";
 import { ifilter, compareBook } from "./index.js";
 
-
 describe("compareBook", () => {
   test("should return -1 if author of first book is lexicographically before second", () => {
     const bookA = { Author: "Alberto Manzi" };
@@ -20,7 +19,6 @@ describe("ifilter", () => {
     const book = { Author: "Unknown Author", Publisher: "Einaudi" };
     expect(ifilter(book)).toBe(true);
   });
-  
 
   // test("should return false if neither author nor publisher match", () => {
   //   const book = { Author: "Unknown Author", Publisher: "Unknown Publisher" };
